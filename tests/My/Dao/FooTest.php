@@ -28,7 +28,7 @@ class FooTest extends \PHPUnit_Extensions_Database_TestCase
 	protected function getDb()
 	{
 		if (!$this->db) {
-			$this->db = new \PDO('mysql:host=' . $this->host . ';dbname=' . $this->schema, 'root');
+			$this->db = new \PDO('mysql:host=' . $this->host . ';dbname=' . $this->schema);
 		}
 		return $this->db;
 	}
