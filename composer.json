@@ -1,0 +1,7 @@
+{
+    "minimum-stability": "dev",
+    "name": "elazar/phpunit-db-examples",
+    "description": "Example code from a presentation on database testing with PHPUnit",
+    "keywords": [ "phpunit", "database", "testing" ],
+    "license": "BSD-2-Clause"
+}
