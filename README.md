@@ -1,15 +1,17 @@
-Check out [the slide](http://matthewturland.com/slides/phpunit-db) associated with this code.
+Check out [the slides](http://matthewturland.com/slides/phpunit-db) associated with this code.
 
 # Installation
 
 ```
-cd tests
+git clone git://github.com/elazar/phpunit-db-examples.git
+cd php-db-examples/tests
 php composer.phar install
 ```
 
 # Usage
 
 ```
+cd php-db-examples/tests
 ./vendor/bin/phpunit My/Dao/FooTest.php
 ```
 
