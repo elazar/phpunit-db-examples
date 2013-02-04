@@ -1,0 +1,16 @@
+{
+    "minimum-stability": "dev",
+    "name": "elazar/phpunit-db-examples",
+    "description": "Example code from a presentation on database testing with PHPUnit",
+    "keywords": [ "phpunit", "database", "testing" ],
+    "license": "BSD-2-Clause",
+    "require": {
+        "php": ">=5.3.3",
+        "phpunit/dbunit": "1.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "My": "../src"
+        }
+    }
+}
