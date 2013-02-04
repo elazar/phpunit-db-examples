@@ -5,7 +5,7 @@ Check out [the slides](http://matthewturland.com/slides/phpunit-db) associated w
 ```
 git clone git://github.com/elazar/phpunit-db-examples.git
 cd php-db-examples
-mysql -e 'create database phpunit_db'
+mysql -e 'create database phpunit_db;grant all on phpunit_db to "%"@"%";'
 mysql phpunit_db < phpunit_db.sql
 cd tests
 php composer.phar install
