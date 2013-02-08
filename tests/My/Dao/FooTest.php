@@ -4,7 +4,7 @@ namespace My\Dao;
 
 class FooTest extends \PHPUnit_Extensions_Database_TestCase
 {
-    protected $host = 'localhost';
+	protected $host = 'localhost';
 	protected $schema = 'phpunit_db';
 	protected $db;
 	protected $foo;
@@ -34,16 +34,6 @@ class FooTest extends \PHPUnit_Extensions_Database_TestCase
 	}
 
 	/**
-	 * Return the path to a directory containing MySQL XML data set files.
-	 *
-	 * @return string
-	 */
-	protected function getFilesDirectory()
-	{
-		return __DIR__ . '/_files';
-	}
-
-	/**
 	 * Shorthand for getting a data set specific to the current test.
 	 *
 	 * @param string $name Name of the data set file without the file extension
@@ -51,27 +41,24 @@ class FooTest extends \PHPUnit_Extensions_Database_TestCase
 	 */
 	protected function getDataSetFromFile($name)
 	{
-		return $this->createMySQLXMLDataSet($this->getFilesDirectory() . '/' . $this->getName(false) . '/' . $name . '.xml');
+		return $this->createMySQLXMLDataSet(__DIR__ . '/_files/' . $this->getName(false) . '/' . $name . '.xml');
 	}
 
 	/**
-	 * Shorthand for getting
+	 * @return PHPUnit_Extensions_Database_DB_IDatabaseConnection
+	 */
+	protected function getConnection()
+	{
+		return $this->createDefaultDBConnection($this->getDb(), $this->schema);
+	}
 
-    /**
-     * @return PHPUnit_Extensions_Database_DB_IDatabaseConnection
-     */
-    protected function getConnection()
-    {
-        return $this->createDefaultDBConnection($this->getDb(), $this->schema);
-    }
-
-    /**
-     * @return PHPUnit_Extensions_Database_DataSet_IDataSet
-     */
-    protected function getDataSet()
-    {
-        return $this->getDataSetFromFile('seed');
-    }
+	/**
+	 * @return PHPUnit_Extensions_Database_DataSet_IDataSet
+	 */
+	protected function getDataSet()
+	{
+		return $this->getDataSetFromFile('seed');
+	}
 
 	/**
 	 * Tests inserting a valid record.
